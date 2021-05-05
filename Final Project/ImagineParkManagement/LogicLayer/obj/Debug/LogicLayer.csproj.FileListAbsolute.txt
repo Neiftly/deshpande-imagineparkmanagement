@@ -1,0 +1,22 @@
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\bin\Debug\LogicLayer.dll
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\bin\Debug\LogicLayer.pdb
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\bin\Debug\DataAccessLayer.dll
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\bin\Debug\DataObjects.dll
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\bin\Debug\DataAccessLayer.pdb
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\bin\Debug\DataObjects.pdb
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.dll
+H:\dotNetTwo\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.pdb
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\LogicLayer.dll
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\LogicLayer.pdb
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\DataAccessLayer.dll
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\DataObjects.dll
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\DataAccessLayer.pdb
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\DataObjects.pdb
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.dll
+H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.pdb

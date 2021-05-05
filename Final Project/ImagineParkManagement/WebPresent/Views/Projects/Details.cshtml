@@ -1,0 +1,84 @@
+﻿@model DataObjects.ProjectViewModel
+
+@{ 
+    IEnumerable<int> tools = ViewBag.Tools;
+}
+<div>
+    <h4>ProjectViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProjectID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectDescription)
+        </dd>
+
+        <dt>
+            Checked Out Tools:
+        </dt>
+
+        <dd>
+            @if(ViewBag.Tools == null)
+            {
+                @Html.Display("N/A")
+            }
+            else
+            {
+            <ul>
+                @foreach (var tool in ViewBag.Tools)
+                {
+                    <li>
+                        @tool @Html.ActionLink("Check In", "CheckIn", "Tools", new { tool, Model.ProjectID })
+                    </li>
+                }
+            </ul>
+            }
+            
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Check Out Tools", "Index", "Tools") |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

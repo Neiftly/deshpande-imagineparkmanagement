@@ -1,0 +1,34 @@
+File: story_Park_Staff_Admin_EnterVolunteerData.txt
+Date: 2020-04-07
+Description:
+	Tells the story of the Park Staff Admin entering
+	new Volunteer data.
+	Park Staff Administrator will be refered to as Admin
+	
+	
+Basic Flow
+1	Admin starts new Volunteer record
+2	Admin enters Volunteer name
+3	Admin enters Volunteer address (if avaialable)
+4	Admin enters Volunteer primary phone number (if avaialable)
+5	Admin enters Volunteer email address (if avaialable)
+7	Admin enters Volunteer Availability
+8	Admin enters Volunteer skillset (if avaialable)
+9	Admin enters Volunteer limitations (if avaialable)
+10	Admin confirms information
+11	Record is complete
+
+
+
+
+Fields Identified or Suggested
+Volunteer
+	-ID number(auto)
+	-Name
+	-Address
+	-Phone
+	-Email
+	-Salary(Volunteer Identifier)
+	-Availability
+	-Skillset
+	-Limitations

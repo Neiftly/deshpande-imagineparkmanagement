@@ -1,0 +1,65 @@
+﻿@using DataObjects
+@model ToolViewModel
+
+
+@{
+    ViewBag.Title = "Details";
+    int? project = ViewBag.ProjectID;
+    List<int?> projectIds = ViewBag.Projects;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tool</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ToolDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToolDescription)
+        </dd>
+        <dt>
+            @if (project == 0)
+            {
+                @:Pick a Project:
+            }
+            else
+            {
+                @:Project ID:
+            }
+        </dt>
+        @if (project == 0)
+        {
+            <dd>
+
+                <ul>
+                    
+                    @foreach (var projectId in projectIds)
+                    {
+                        <li>
+                            @projectId @Html.ActionLink("Check Out", "CheckOut", new { pId = projectId, tId = Model.ToolID })
+                        </li>
+                    }
+                    
+                </ul>
+                </dd>
+        }
+        else
+        {
+            <dd>
+            @Html.DisplayFor(model => model.ProjectID)
+                @Html.ActionLink("Check In", "CheckIn", new { pId = Model.ProjectID, tId = Model.ToolID})
+
+            
+            </dd>
+        }
+    </dl>
+</div>
+<p>
+
+    |
+    @Html.ActionLink("Back to List", "Index")
+</p>

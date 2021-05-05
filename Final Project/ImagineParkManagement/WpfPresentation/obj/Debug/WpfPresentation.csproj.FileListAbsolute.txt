@@ -1,0 +1,72 @@
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.csprojAssemblyReference.cache
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\MainWindow.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\App.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation_MarkupCompile.cache
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation_MarkupCompile.lref
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\WpfPresentation.exe.config
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\WpfPresentation.exe
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\WpfPresentation.pdb
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\DataObjects.dll
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\LogicLayer.dll
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\DataObjects.pdb
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\LogicLayer.pdb
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\MainWindow.baml
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.g.resources
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.Properties.Resources.resources
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.csproj.GenerateResource.cache
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.csproj.CoreCompileInputs.cache
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.csproj.CopyComplete
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.exe
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.pdb
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmProjectDetailAddEdit.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmToolDetailAddEdit.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmUpdatePassword.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmWorkerDetailAddEdit.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmProjectDetailAddEdit.baml
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmToolDetailAddEdit.baml
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmUpdatePassword.baml
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmWorkerDetailAddEdit.baml
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\DataAccessLayer.dll
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\bin\Debug\DataAccessLayer.pdb
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmUpdateAvailability.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmUpdateAvailability.baml
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmAddProjectName.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmAddProjectName.baml
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmAddTool.g.cs
+H:\dotNetTwo\ImagineParkManagement\WpfPresentation\obj\Debug\frmAddTool.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\WpfPresentation.exe.config
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\WpfPresentation.exe
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\WpfPresentation.pdb
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\DataObjects.dll
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\LogicLayer.dll
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\DataAccessLayer.dll
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\DataObjects.pdb
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\LogicLayer.pdb
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\bin\Debug\DataAccessLayer.pdb
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.csprojAssemblyReference.cache
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmAddProjectName.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmAddTool.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmProjectDetailAddEdit.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmToolDetailAddEdit.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmUpdateAvailability.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmUpdatePassword.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmWorkerDetailAddEdit.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\MainWindow.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\App.g.cs
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation_MarkupCompile.cache
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation_MarkupCompile.lref
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmAddProjectName.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmAddTool.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmProjectDetailAddEdit.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmToolDetailAddEdit.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmUpdateAvailability.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmUpdatePassword.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\frmWorkerDetailAddEdit.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\MainWindow.baml
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.g.resources
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.Properties.Resources.resources
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.csproj.GenerateResource.cache
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.csproj.CoreCompileInputs.cache
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.csproj.CopyComplete
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.exe
+H:\dotNetTwo\Final Project\ImagineParkManagement\WpfPresentation\obj\Debug\WpfPresentation.pdb

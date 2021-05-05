@@ -1,0 +1,207 @@
+﻿<Window x:Class="WpfPresentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation"
+        mc:Ignorable="d"
+        x:Name="MainWin"
+        Title="Imagine Park Management System" Height="800" Width="1200" 
+        Loaded="MainWin_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu x:Name="mnuMain" Grid.Row="0">
+            <MenuItem x:Name="mnuItemIPM" Header="IPM" />
+            <MenuItem x:Name="mnuItemFile" Header="File" />
+            <MenuItem x:Name="mnuItemEdit" Header="Edit" >
+                <MenuItem x:Name="mnuItemUpdatePassword" Header="Update Password" Click="mnuItemUpdatePassword_Click" />
+                <MenuItem x:Name="mnuItemUpdateAvailability" Header="Update Availability" Click="mnuItemUpdateAvailability_Click" />
+                <MenuItem x:Name="mnuItemEditProfile" Header="Edit Profile" Click="mnuItemEditProfile_Click" />
+            </MenuItem>
+            <MenuItem x:Name="mnuItemView" Header="View" />
+            <MenuItem x:Name="mnuItemHelp" Header="Help" />
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblGreeting" Grid.Column="0" 
+                   Content="This should be a greeting" Margin="20 0" 
+                   HorizontalAlignment="Right" />
+            <Label x:Name="lblRoles" Grid.Column="1"
+                   Grid.RowSpan="2"
+                   Margin="20 0"
+                   HorizontalAlignment="Right" >
+                <TextBlock x:Name="txtblRoles" Text="This Should be a list of roles" TextWrapping="Wrap"/>
+            </Label>
+            <TextBox x:Name="txtUsername" Grid.Column="2" Text="" 
+                     Margin="10 6 10 0" Width="200" 
+                     HorizontalContentAlignment="Center" 
+                     VerticalContentAlignment="Center" />
+            <Label x:Name="lblUsername" Content="Email Address" FontSize="11" 
+                   Grid.Column="2" Grid.Row="1" 
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   VerticalAlignment="Top" />
+            <PasswordBox x:Name="pwdPassword" Grid.Column="3" Password="" 
+                     Margin="10 6 10 0" Width="200" 
+                     HorizontalContentAlignment="Center" 
+                     VerticalContentAlignment="Center" KeyUp="pwdPassword_KeyUp" />
+            <Label x:Name="lblPassword" Content="Password" FontSize="11" 
+                   Grid.Column="3" Grid.Row="1" 
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   VerticalAlignment="Top"/>
+            <Button  x:Name="btnLogIn" HorizontalAlignment="Left" 
+                     Margin="10 6 10 0" Width="100" Grid.Column="4"
+                     Content="Log In" Click="btnLogIn_Click"/>
+        </Grid>
+
+        <TabControl x:Name="tabSetMain" Grid.Row="2">
+            <TabItem x:Name="tabParkAdmin" Header="Park Admin" Visibility="Collapsed" GotFocus="tabParkAdmin_GotFocus" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dgUserList" Grid.Row="1" CanUserAddRows="False"
+                              Grid.ColumnSpan="5" MouseDoubleClick="dgUserList_MouseDoubleClick" />
+                    <Button x:Name="btnEditUser" Grid.Column="1" Grid.Row="2" 
+                            Margin="10 5" Click="btnEditUser_Click" >Edit Worker</Button>
+                    <Button x:Name="btnAddUser" Grid.Column="2" Grid.Row="2" 
+                            Margin="10 5" Click="btnAddUser_Click" >Add New Worker</Button>
+                    <Button x:Name="btnUpdateAvailability" Grid.Column="3" Grid.Row="2" 
+                            Margin="10 5" Click="btnUpdateAvailability_Click" >Show Availability</Button>
+                    <CheckBox x:Name="chkShowActive" Grid.Column="4" Grid.Row="2"
+                              HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Margin="0 0 20 0" 
+                              IsChecked="True" Click="chkShowActive_Click" >Show Active Workers</CheckBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabQuarterMaster" Header="Quartermaster" Visibility="Collapsed" GotFocus="tabQuarterMaster_GotFocus">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dgToolList" Grid.Row="1" CanUserAddRows="False"
+                              Grid.ColumnSpan="4" MouseDoubleClick="dgToolList_MouseDoubleClick" />
+                    <Button x:Name="btnEditTool" Grid.Column="1" Grid.Row="2" 
+                            Margin="10 5" Click="btnEditTool_Click" >Check Out/In Tool</Button>
+                    <Button x:Name="btnAddTool" Grid.Column="2" Grid.Row="2" 
+                            Margin="10 5" Click="btnAddTool_Click" >Add New Tool</Button>
+                    <CheckBox x:Name="chkShowUsedTools" Grid.Column="3" Grid.Row="2"
+                              HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Margin="0 0 20 0" 
+                              IsChecked="True" >Show Checked Out Tools</CheckBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabMaintenance" Header="Maintenance" Visibility="Collapsed" GotFocus="tabMaintenance_GotFocus">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dgProjectList" Grid.Row="1" CanUserAddRows="False"
+                              Grid.ColumnSpan="6" />
+                    <Button x:Name="btnAddProjectName" Grid.Column="1" Grid.Row="2" 
+                            Margin="10 5" Click="btnAddProjectName_Click" >Add New Project</Button>
+                    <Button x:Name="btnEditProject" Grid.Column="2" Grid.Row="2" 
+                            Margin="10 5" Click="btnEditProject_Click" >Edit Project</Button>
+                    <Button x:Name="addProject" Grid.Column="3" Grid.Row="2" 
+                            Margin="10 5" Click="btnAddProject_Click" >Start New Project</Button>
+                    <Button x:Name="btnFinishProject" Grid.Column="4" Grid.Row="2" 
+                            Margin="10 5" Click="btnFinishProject_Click" >Mark Project Finished</Button>
+                    <CheckBox x:Name="chkShowActiveProjects" Grid.Column="5" Grid.Row="2"
+                              HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Margin="0 0 20 0" 
+                              IsChecked="True" >Show Active Projects</CheckBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabWorkload" Header="Workload" Visibility="Collapsed" GotFocus="tabWorkload_GotFocus">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dgTaskList" Grid.Row="1" CanUserAddRows="False"
+                              Grid.ColumnSpan="4" MouseDoubleClick="dgTaskList_MouseDoubleClick" />
+                    <Button x:Name="btnGetTaskDetail" Grid.Column="1" Grid.Row="2" 
+                            Margin="10 5" Click="btnGetTaskDetail_Click" >Show Details</Button>
+                    <Button x:Name="btnMarkTaskComplete" Grid.Column="2" Grid.Row="2" 
+                            Margin="10 5" Click="btnMarkTaskComplete_Click" >Mark Complete</Button>
+                    <CheckBox x:Name="chkActiveTasks" Grid.Column="3" Grid.Row="2"
+                              HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Margin="0 0 20 0" 
+                              IsChecked="True" >Show Active Tasks</CheckBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabBlank" Header="..." Visibility="Visible">
+                <Canvas>
+                    <Image x:Name="imgBlankTab" 
+                           Source="lukasz-szmigiel-jFCViYFYcus-unsplash.jpg" 
+                           Canvas.Left="124" Height="561" Width="897" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center" 
+                             FontSize="30" FontWeight="UltraBold" IsReadOnly="True" 
+                             Canvas.Left="376" Canvas.Top="509" VerticalAlignment="Center" 
+                             HorizontalAlignment="Center" Background="Transparent" 
+                             Foreground="White" SelectionOpacity="0" BorderBrush="#00ABADB3">
+                        Welcome to Imagine Park</TextBox>
+                </Canvas>
+            </TabItem>
+        </TabControl>
+        <StatusBar x:Name="sbarMain" Grid.Row="4">
+            <StatusBarItem x:Name="sbarItemMessage" 
+                           Content="Please Log In to Continue..." 
+                           Padding="20, 0" FontWeight="Bold"></StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

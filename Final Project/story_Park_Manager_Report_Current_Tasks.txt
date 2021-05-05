@@ -1,0 +1,22 @@
+File: story_Park_Manager_Report_Current_Tasks.txt
+Date: 2020-04-07
+Description:
+	Tells the story of the Park Manager(Manager)
+	running a report about tasks that need to be completed.
+	This will be a query
+	
+Basic Flow
+1.	Manager gets a list of Projects that do not have an end date.
+	- Project ID
+	- Assigned Worker
+	- Type of Worker assigned
+	- Start Date
+	- Deadline (if avaialable)
+	- Description
+	- Filename for task list
+2. System returns a report
+
+
+Fields Identified or Suggested
+Campaign
+Worker

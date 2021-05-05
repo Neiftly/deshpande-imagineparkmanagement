@@ -1,0 +1,35 @@
+File: story_Park_Staff_Admin_EnterEmployeeData.txt
+Date: 2020-04-07
+Description:
+	Tells the story of the Park Staff Admin entering
+	new employee data.
+	Park Staff Administrator will be refered to as Admin
+	
+	
+Basic Flow
+1	Admin starts new employee record
+2	Admin enters employee name
+3	Admin enters employee address
+4	Admin enters employee primary phone number (if avaialable)
+5	Admin enters employee email address (if avaialable)
+6	Admin enters employee salary
+7	Admin enters Employee availability
+8	Admin enters employee skillset (if avaialable)
+9	Admin enters employee limitations (if avaialable)
+10	Admin confirms information
+11	Record is complete
+
+
+
+
+Fields Identified or Suggested
+Employee
+	-ID (auto)
+	-Name
+	-Address
+	-Phone
+	-Email
+	-Salary
+	-Availability
+	-Skillset
+	-Limitations

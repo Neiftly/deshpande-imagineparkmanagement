@@ -1,0 +1,20 @@
+File: story_Maintainence_Manager_Updates_Project_Data.txt
+Date: 2020-04-07
+Description:
+	tells the story of the Maintainence Manager(Manager) 
+	updating data about a project
+	
+Basic Flow
+1. Manager locates current project data
+2. Manager changes any of the project data
+3. Manager confirms changes
+4. System stores the changes
+5. System stores date and time of the changes
+6. The task is complete
+
+
+Fields Identified or Suggested
+Audit Trail
+	-Date and Time of Change
+	-Manager Identifier
+	-Change Description

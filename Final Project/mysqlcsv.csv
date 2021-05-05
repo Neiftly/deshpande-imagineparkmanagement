@@ -1,0 +1,212 @@
+dbms,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CONSTRAINT_TYPE,REFERENCED_TABLE_SCHEMA,REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+mysql,sys,sys_config,variable,1,varchar,128,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ap,general_ledger_accounts,account_number,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ap,general_ledger_accounts,account_description,2,varchar,50,UNIQUE,NULL,NULL,NULL
+mysql,ap,terms,terms_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ap,vendors,vendor_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ap,vendors,vendor_name,2,varchar,50,UNIQUE,NULL,NULL,NULL
+mysql,ap,invoice_line_items,invoice_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ap,invoice_line_items,invoice_sequence,2,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ap,invoices,invoice_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ap,vendor_contacts,vendor_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ex,null_sample,invoice_id,1,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,ex,departments,department_number,1,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,ex,color_sample,color_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ex,sales_reps,rep_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ex,sales_totals,rep_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ex,sales_totals,sales_year,2,char,4,"PRIMARY KEY",NULL,NULL,NULL
+mysql,om,customers,customer_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,om,items,item_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,om,items,title,2,varchar,50,UNIQUE,NULL,NULL,NULL
+mysql,om,items,artist,3,varchar,50,UNIQUE,NULL,NULL,NULL
+mysql,om,orders,order_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,om,order_details,order_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,om,order_details,item_id,2,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,imagineparkdb,zip,ZIPCode,1,char,5,"PRIMARY KEY",NULL,NULL,NULL
+mysql,imagineparkdb,worker,WorkerID,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,imagineparkdb,availabilty,WorkerID,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,imagineparkdb,limitations,WorkerID,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,imagineparkdb,skillset,WorkerID,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,imagineparkdb,workertype,WorkerID,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,imagineparkdb,project,ProjectID,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,ap,vendors,default_terms_id,11,int,NULL,"FOREIGN KEY",ap,terms,terms_id
+mysql,ap,vendors,default_account_number,12,int,NULL,"FOREIGN KEY",ap,general_ledger_accounts,account_number
+mysql,ap,invoice_line_items,invoice_id,1,int,NULL,"FOREIGN KEY",ap,invoices,invoice_id
+mysql,ap,invoice_line_items,account_number,3,int,NULL,"FOREIGN KEY",ap,general_ledger_accounts,account_number
+mysql,ap,invoices,terms_id,8,int,NULL,"FOREIGN KEY",ap,terms,terms_id
+mysql,ap,invoices,vendor_id,2,int,NULL,"FOREIGN KEY",ap,vendors,vendor_id
+mysql,om,orders,customer_id,2,int,NULL,"FOREIGN KEY",om,customers,customer_id
+mysql,om,order_details,order_id,1,int,NULL,"FOREIGN KEY",om,orders,order_id
+mysql,om,order_details,item_id,2,int,NULL,"FOREIGN KEY",om,items,item_id
+mysql,imagineparkdb,worker,ZIPCode,5,char,5,"FOREIGN KEY",imagineparkdb,zip,ZIPCode
+mysql,imagineparkdb,availabilty,WorkerID,1,int,NULL,"FOREIGN KEY",imagineparkdb,worker,WorkerID
+mysql,imagineparkdb,limitations,WorkerID,1,int,NULL,"FOREIGN KEY",imagineparkdb,worker,WorkerID
+mysql,imagineparkdb,skillset,WorkerID,1,int,NULL,"FOREIGN KEY",imagineparkdb,worker,WorkerID
+mysql,imagineparkdb,workertype,WorkerID,1,int,NULL,"FOREIGN KEY",imagineparkdb,worker,WorkerID
+mysql,imagineparkdb,project,WorkerID,2,int,NULL,"FOREIGN KEY",imagineparkdb,worker,WorkerID
+mysql,sys,sys_config,value,2,varchar,128,NULL,NULL,NULL,NULL
+mysql,sys,sys_config,set_time,3,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,sys,sys_config,set_by,4,varchar,128,NULL,NULL,NULL,NULL
+mysql,ap,terms,terms_description,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,terms,terms_due_days,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,ap,vendors,vendor_address1,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,vendors,vendor_address2,4,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,vendors,vendor_city,5,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,vendors,vendor_state,6,char,2,NULL,NULL,NULL,NULL
+mysql,ap,vendors,vendor_zip_code,7,varchar,20,NULL,NULL,NULL,NULL
+mysql,ap,vendors,vendor_phone,8,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,vendors,vendor_contact_last_name,9,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,vendors,vendor_contact_first_name,10,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,invoice_line_items,line_item_amount,4,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_line_items,line_item_description,5,varchar,100,NULL,NULL,NULL,NULL
+mysql,ap,invoices,invoice_number,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,invoices,invoice_date,4,date,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices,invoice_total,5,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices,payment_total,6,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices,credit_total,7,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices,invoice_due_date,9,date,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices,payment_date,10,date,NULL,NULL,NULL,NULL,NULL
+mysql,ap,vendor_contacts,last_name,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,vendor_contacts,first_name,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,invoice_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,vendor_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,invoice_number,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,invoice_date,4,date,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,invoice_total,5,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,payment_total,6,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,credit_total,7,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,terms_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,invoice_due_date,9,date,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoice_archive,payment_date,10,date,NULL,NULL,NULL,NULL,NULL
+mysql,ex,null_sample,invoice_total,2,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ex,departments,department_name,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,ex,employees,employee_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,employees,last_name,2,varchar,35,NULL,NULL,NULL,NULL
+mysql,ex,employees,first_name,3,varchar,35,NULL,NULL,NULL,NULL
+mysql,ex,employees,department_number,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,employees,manager_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,projects,project_number,1,varchar,5,NULL,NULL,NULL,NULL
+mysql,ex,projects,employee_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,customers,customer_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,customers,customer_last_name,2,varchar,30,NULL,NULL,NULL,NULL
+mysql,ex,customers,customer_first_name,3,varchar,30,NULL,NULL,NULL,NULL
+mysql,ex,customers,customer_address,4,varchar,60,NULL,NULL,NULL,NULL
+mysql,ex,customers,customer_city,5,varchar,15,NULL,NULL,NULL,NULL
+mysql,ex,customers,customer_state,6,varchar,15,NULL,NULL,NULL,NULL
+mysql,ex,customers,customer_zip,7,varchar,10,NULL,NULL,NULL,NULL
+mysql,ex,customers,customer_phone,8,varchar,24,NULL,NULL,NULL,NULL
+mysql,ex,color_sample,color_number,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,color_sample,color_name,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ex,string_sample,emp_id,1,varchar,3,NULL,NULL,NULL,NULL
+mysql,ex,string_sample,emp_name,2,varchar,25,NULL,NULL,NULL,NULL
+mysql,ex,float_sample,float_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,float_sample,float_value,2,double,NULL,NULL,NULL,NULL,NULL
+mysql,ex,date_sample,date_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,date_sample,start_date,2,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,invoice_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,vendor_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,invoice_number,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,invoice_date,4,date,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,invoice_total,5,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,payment_total,6,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,credit_total,7,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,terms_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,invoice_due_date,9,date,NULL,NULL,NULL,NULL,NULL
+mysql,ex,active_invoices,payment_date,10,date,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,invoice_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,vendor_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,invoice_number,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,invoice_date,4,date,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,invoice_total,5,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,payment_total,6,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,credit_total,7,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,terms_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,invoice_due_date,9,date,NULL,NULL,NULL,NULL,NULL
+mysql,ex,paid_invoices,payment_date,10,date,NULL,NULL,NULL,NULL,NULL
+mysql,ex,sales_reps,rep_first_name,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,ex,sales_reps,rep_last_name,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ex,sales_totals,sales_total,3,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ex,engine_sample,customer_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ex,engine_sample,customer_last_name,2,varchar,30,NULL,NULL,NULL,NULL
+mysql,ex,engine_sample,customer_first_name,3,varchar,30,NULL,NULL,NULL,NULL
+mysql,ex,engine_sample,customer_address,4,varchar,60,NULL,NULL,NULL,NULL
+mysql,ex,engine_sample,customer_city,5,varchar,15,NULL,NULL,NULL,NULL
+mysql,ex,engine_sample,customer_state,6,varchar,15,NULL,NULL,NULL,NULL
+mysql,ex,engine_sample,customer_zip,7,varchar,10,NULL,NULL,NULL,NULL
+mysql,ex,engine_sample,customer_phone,8,varchar,24,NULL,NULL,NULL,NULL
+mysql,om,customers,customer_first_name,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,om,customers,customer_last_name,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,om,customers,customer_address,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,om,customers,customer_city,5,varchar,50,NULL,NULL,NULL,NULL
+mysql,om,customers,customer_state,6,char,2,NULL,NULL,NULL,NULL
+mysql,om,customers,customer_zip,7,varchar,20,NULL,NULL,NULL,NULL
+mysql,om,customers,customer_phone,8,varchar,30,NULL,NULL,NULL,NULL
+mysql,om,customers,customer_fax,9,varchar,30,NULL,NULL,NULL,NULL
+mysql,om,items,unit_price,4,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,om,orders,order_date,3,date,NULL,NULL,NULL,NULL,NULL
+mysql,om,orders,shipped_date,4,date,NULL,NULL,NULL,NULL,NULL
+mysql,om,order_details,order_qty,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices_audit,invoice_id,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices_audit,vendor_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices_audit,invoice_number,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,invoices_audit,invoice_total,4,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices_audit,action_type,5,varchar,50,NULL,NULL,NULL,NULL
+mysql,ap,invoices_audit,action_date,6,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,ap,invoices_audit,action_user,7,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,zip,City,2,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,zip,StateAbbreviation,3,char,2,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,zip,StateName,4,varchar,60,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,worker,LastName,2,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,worker,FirstName,3,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,worker,StreetAddress,4,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,worker,Phone,6,char,10,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,worker,Email,7,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,worker,StartDate,8,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,worker,EndDate,9,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,availabilty,Sunday,2,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,availabilty,Monday,3,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,availabilty,Tuesday,4,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,availabilty,Wednesday,5,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,availabilty,Thursday,6,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,availabilty,Friday,7,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,availabilty,Saturday,8,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,limitations,TimeManagement,2,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,limitations,PhysicalDemands,3,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,limitations,Mental_Interpersonal,4,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,limitations,OutputDemands,5,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,skillset,Education,2,enum,2,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,skillset,JobTraining,3,enum,1,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,WorkerID,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,LastName,2,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,FirstName,3,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,StreetAddress,4,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,ZIPCode,5,char,5,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,Phone,6,char,10,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,Email,7,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,StartDate,8,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,EndDate,9,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,ChangeType,10,varchar,6,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,ChangeDateTime,11,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workeraudittrail,AdminID,12,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workertype,Paid,2,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workertype,Salary,3,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,workertype,Title,4,varchar,50,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,project,Paid,3,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,project,ProjectDescription,4,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,project,TaskListFilename,5,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,project,StartDate,6,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,project,Deadline,7,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,project,EndDate,8,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,project,HoursWorked,9,time,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,ProjectID,1,int,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,WorkerID,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,Paid,3,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,ProjectDescription,4,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,TaskListFilename,5,varchar,256,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,StartDate,6,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,Deadline,7,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,EndDate,8,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,HoursWorked,9,time,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,ChangeType,10,varchar,6,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,ChangeDateTime,11,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,imagineparkdb,projectaudittrail,ManagerID,12,varchar,256,NULL,NULL,NULL,NULL

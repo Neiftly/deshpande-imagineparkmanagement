@@ -1,0 +1,94 @@
+﻿@model WebPresent.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ApplicationUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Email Address:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Given Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GivenName)
+        </dd>
+
+        <dt>
+            Surname:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            Start Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            Active:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            &nbsp;
+        </dt>
+
+        <dd>
+            &nbsp;
+        </dd>
+
+        <dt>
+            Assigned Roles:
+        </dt>
+
+        <dd>
+            <ul>
+                @foreach (var role in ViewBag.Roles)
+                {
+                    <li>
+                        @role @Html.ActionLink("Remove Role", "RemoveRole", new { Id = Model.Id, Role = role })
+                    </li>
+                }
+            </ul>
+        </dd>
+
+        <dt>
+            Unassigned Roles:
+        </dt>
+
+        <dd>
+            <ul>
+                @foreach (var role in ViewBag.NoRoles)
+                {
+                    <li>
+                        @role @Html.ActionLink("Add Role", "AddRole", new { Id = Model.Id, Role = role })
+                    </li>
+                }
+            </ul>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

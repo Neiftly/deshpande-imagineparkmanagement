@@ -1,0 +1,26 @@
+File: story_Maintainence_Manager_Enters_Project_Data.txt
+Date: 2020-04-07
+Description:
+	tells the story of the Maintainence Manager(Manager) 
+	entering data about a project
+	
+Basic Flow
+1. Manager Initiates New Project
+2. Manager Assigns a Volunteer or Employee to the project
+3. Manager notes if volunteer or Employee is assigned
+4. Manager gives a description of the project
+5. Manager enters list of tasks to be done.
+6. Manager enters a start date for the project
+7. Manager enters a deadline (if exists)
+
+Fields Identified or Suggested
+Project
+	- Project ID
+	- Worker ID
+	- Volunteer or Employee
+	- Description
+	- filename for list of tasks
+	- Start Date
+	- Deadline
+	- End Date
+	- Hours Worked

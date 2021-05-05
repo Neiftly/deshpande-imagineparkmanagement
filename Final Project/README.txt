@@ -1,0 +1,2 @@
+I may have edited my database through visual studio so there may be parts that are broken when using the .sql file to generate the 
+database. If that happens please give me a chance to check the server on my computer and update the sql file.
