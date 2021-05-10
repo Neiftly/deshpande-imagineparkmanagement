@@ -170,7 +170,7 @@ namespace WebPresent.Controllers
             }
 
             var allRoles = new string[] { "Intern", "Park Manager", "Park Staff Admin", "QuarterMaster", "Volunteer" };
-            var roles = worker.Roles;
+            var roles = workerManager.RetrieveRolesByWorkerID(id);
             var noRoles = allRoles.Except(roles);
 
             ViewBag.Roles = roles;
@@ -192,7 +192,7 @@ namespace WebPresent.Controllers
                 return HttpNotFound();
             }
             var allRoles = new string[] { "Intern", "Park Manager", "Park Staff Admin", "QuarterMaster", "Volunteer" };
-            var roles = worker.Roles;
+            var roles = workerManager.RetrieveRolesByWorkerID(id);
             var noRoles = allRoles.Except(roles);
 
             ViewBag.Roles = roles;

@@ -285,7 +285,6 @@
     <Content Include="Views\Tools\Index.cshtml" />
     <Content Include="Views\Tools\Details.cshtml" />
     <Content Include="Views\Tools\Create.cshtml" />
-    <Content Include="Views\Tools\AddTool.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

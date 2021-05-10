@@ -4,7 +4,7 @@
     IEnumerable<int> tools = ViewBag.Tools;
 }
 <div>
-    <h4>ProjectViewModel</h4>
+    <h4>Project</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -34,7 +34,7 @@
         </dt>
 
         <dd>
-            @Convert.ToString(string.Format("{0:dd/MM/yyyy}", Model.StartDate))
+            @Convert.ToString(string.Format("{0:MM/dd/yyyy}", Model.StartDate))
         </dd>
 
         <dt>
@@ -44,7 +44,7 @@
         <dd>
             @if (Model.EndDate != System.Data.SqlTypes.SqlDateTime.MinValue.Value)
             {
-                @Convert.ToString(string.Format("{0:dd/MM/yyyy}", Model.EndDate))
+                @Convert.ToString(string.Format("{0:MM/dd/yyyy}", Model.EndDate))
             }
             else
             {

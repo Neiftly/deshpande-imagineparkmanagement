@@ -7,7 +7,7 @@
 <h2>Workers</h2>
 
 <p>
-    @Html.ActionLink("Inactive Employees", "InActiveWorkers")
+    @Html.ActionLink("Inactive Employees", "InActiveWorkers") |
     @Html.ActionLink("Add Employee", "RegisterWorker")
 </p>
 <table class="table">
@@ -60,7 +60,7 @@
             @Html.DisplayFor(modelItem => item.StartDate)
         </td>
         <td>
-            @Html.ActionLink("Details", "DetailsWorker", new { id=item.WorkerID }) |
+            @Html.ActionLink("Details", "WorkerDetails", new { id=item.WorkerID }) |
             @Html.ActionLink("Deactivate", "Deactivate", new { id=item.WorkerID })
         </td>
     </tr>

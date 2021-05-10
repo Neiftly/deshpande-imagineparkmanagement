@@ -301,7 +301,7 @@ namespace DataAccessLayer
                                 ZIPCode = reader.GetString(6),
                                 Active = reader.GetBoolean(7),
                                 StartDate = reader.GetDateTime(8),
-                                EndDate = DateTime.MinValue,
+                                EndDate = System.Data.SqlTypes.SqlDateTime.MinValue.Value,
                                 Roles = null,
                                 Availability = null,
                                 Projects = null
@@ -584,7 +584,7 @@ namespace DataAccessLayer
                             ZIPCode = reader.GetString(6),
                             Active = reader.GetBoolean(7),
                             StartDate = reader.GetDateTime(8),
-                            EndDate = DateTime.MinValue,
+                            EndDate = System.Data.SqlTypes.SqlDateTime.MinValue.Value,
                             Roles = null,
                             Availability = null,
                             Projects = null
