@@ -98,28 +98,36 @@ namespace WebPresent.Controllers
 
         public ActionResult MyProjects()
         {
-            var email = User.Identity.Name;
-            if (email == null)
+            if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Home");
+                var email = User.Identity.Name;
+                if (email == null)
+                {
+                    return RedirectToAction("Index", "Home");
 
-            }
-            var workerManager = new WorkerManager();
-            try
-            {
-                var user = workerManager.RetrieveWorkersByActive().Find(u => u.Email == email.ToLower());
-                _projects = _projectManager.RetrieveProjectsByWorkerID(user.WorkerID);
-            }
-            catch (Exception)
-            {
+                }
+                var workerManager = new WorkerManager();
+                try
+                {
+                    var user = workerManager.RetrieveWorkersByActive().Find(u => u.Email == email.ToLower());
+                    _projects = _projectManager.RetrieveProjectsByWorkerID(user.WorkerID);
+                }
+                catch (Exception)
+                {
 
-                RedirectToAction("Index", "Home");
-            }
+                    RedirectToAction("Index", "Home");
+                }
 
-            if(_projects == null)
-            {
-                ViewBag.Message = "You do not have any assigned projects. Please speak to your manager.";
+                if (_projects == null)
+                {
+                    ViewBag.Message = "You do not have any assigned projects. Please speak to your manager.";
+                }
             }
+            else
+            {
+                return Redirect("~/");
+            }
+            
             
             
             
