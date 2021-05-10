@@ -20,7 +20,7 @@ namespace LogicLayer
         {
             _projectAccessor = projectAccessor;
         }
-        public bool AddNewProject(ProjectViewModel project)
+        public bool AddNewProject(Project project)
         {
             bool result = false;
 
@@ -64,7 +64,7 @@ namespace LogicLayer
             return result;
         }
 
-        public bool DeactivateProject(ProjectViewModel project)
+        public bool DeactivateProject(Project project)
         {
             bool result = false;
 
@@ -86,7 +86,7 @@ namespace LogicLayer
             return result;
         }
 
-        public bool EditProjectDetail(ProjectViewModel oldProject, ProjectViewModel newProject)
+        public bool EditProjectDetail(Project oldProject, Project newProject)
         {
             bool result = false;
 

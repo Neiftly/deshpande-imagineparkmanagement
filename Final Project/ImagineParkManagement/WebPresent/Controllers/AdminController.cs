@@ -18,11 +18,18 @@ namespace WebPresent.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var users = userManager.Users.ToList().OrderBy(n => n.Surname);
+            if (User.Identity.IsAuthenticated)
+            {
+                var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var users = userManager.Users.ToList().OrderBy(n => n.Surname);
 
 
-            return View(users);
+                return View(users);
+            } else
+            {
+                return Redirect("~/");
+            }
+            
         }
 
         public ActionResult Details(string id)

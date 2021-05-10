@@ -11,7 +11,7 @@ namespace DataAccessLayer
 {
     public class ProjectAccessor : IProjectAccessor
     {
-        public int AddProject(ProjectViewModel project)
+        public int AddProject(Project project)
         {
             int projectID;
 
@@ -33,8 +33,8 @@ namespace DataAccessLayer
             cmd.Parameters["@Paid"].Value = project.Paid;
             cmd.Parameters["@TaskListFilename"].Value = "";
             cmd.Parameters["@StartDate"].Value = project.StartDate;
-            cmd.Parameters["@DeadLine"].Value = DateTime.MaxValue;
-            cmd.Parameters["@EndDate"].Value = DateTime.MaxValue;
+            cmd.Parameters["@DeadLine"].Value = System.Data.SqlTypes.SqlDateTime.MinValue.Value;
+            cmd.Parameters["@EndDate"].Value = System.Data.SqlTypes.SqlDateTime.MinValue.Value;
             cmd.Parameters["@HoursWorked"].Value = 0;
             cmd.Parameters["@ProjectName"].Value = project.ProjectName;
 
@@ -89,7 +89,7 @@ namespace DataAccessLayer
             return result;
         }
 
-        public int DeactivateProject(ProjectViewModel project)
+        public int DeactivateProject(Project project)
         {
             int result = 0;
 
@@ -181,13 +181,13 @@ namespace DataAccessLayer
                             ProjectID = reader.GetInt32(0),
                             WorkerID = reader.GetInt32(1),
                             Paid = reader.GetBoolean(2),
-                            //TaskListFilename = reader.GetString(3),
+                            // TaskListFilename = reader.GetString(3),
                             StartDate = reader.GetDateTime(4),
                             // Deadline = reader.GetDateTime(5),
-                            // EndDate = reader.GetDateTime(6),
+                            EndDate = reader.GetDateTime(6),
                             // HoursWorked = (int)reader.GetInt32(7),
-                            ProjectName = reader.GetString(5),
-                            ProjectDescription = reader.GetString(6)
+                            ProjectName = reader.GetString(8),
+                            ProjectDescription = reader.GetString(9)
 
 
                         };
@@ -238,7 +238,7 @@ namespace DataAccessLayer
                             // TaskListFilename = reader.GetString(3),
                             StartDate = reader.GetDateTime(4),
                             // Deadline = reader.GetDateTime(5),
-                            // EndDate = reader.GetDateTime(6),
+                            EndDate = reader.GetDateTime(6),
                             // HoursWorked = (int)reader.GetInt32(7),
                             ProjectName = reader.GetString(8),
                             ProjectDescription = reader.GetString(9)
@@ -292,7 +292,7 @@ namespace DataAccessLayer
                             // TaskListFilename = reader.GetString(3),
                             StartDate = reader.GetDateTime(4),
                             // Deadline = reader.GetDateTime(5),
-                            // EndDate = reader.GetDateTime(6),
+                            EndDate = reader.GetDateTime(6),
                             // HoursWorked = (int)reader.GetInt32(7),
                             ProjectName = reader.GetString(8),
                             ProjectDescription = reader.GetString(9)
@@ -316,7 +316,7 @@ namespace DataAccessLayer
             return projects;
         }
 
-        public int UpdateProject(ProjectViewModel oldProject, ProjectViewModel newProject)
+        public int UpdateProject(Project oldProject, Project newProject)
         {
             int result;
 

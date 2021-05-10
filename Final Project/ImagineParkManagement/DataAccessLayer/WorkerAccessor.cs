@@ -374,9 +374,10 @@ namespace DataAccessLayer
                             // TaskListFilename = reader.GetString(3),
                             StartDate = reader.GetDateTime(4),
                             // Deadline = reader.GetDateTime(5),
-                            // EndDate = reader.GetDateTime(6),
+                            EndDate = reader.GetDateTime(6),
                             // HoursWorked = reader.GetInt32(7),
-                            ProjectName = reader.GetString(8)
+                            ProjectName = reader.GetString(8),
+                            ProjectDescription = reader.GetString(9)
                         };
                         projects.Add(project);
                     }

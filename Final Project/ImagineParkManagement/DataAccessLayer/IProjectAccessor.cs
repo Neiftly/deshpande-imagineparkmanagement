@@ -12,9 +12,9 @@ namespace DataAccessLayer
         List<ProjectViewModel> SelectAllProjects();
         List<ProjectViewModel> SelectProjectsByWorkerID(int? workerId);
         ProjectViewModel SelectProjectByID(int? projectID);
-        int UpdateProject(ProjectViewModel oldProject, ProjectViewModel newProject);
-        int AddProject(ProjectViewModel project);
-        int DeactivateProject(ProjectViewModel project);
+        int UpdateProject(Project oldProject, Project newProject);
+        int AddProject(Project project);
+        int DeactivateProject(Project project);
         int AddProjectName(string projectName, string projectDescription);
         List<string> SelectAllProjectNames();
         List<int> SelectToolsByProjectID(int? projectID);

@@ -1,6 +1,6 @@
 ﻿@model DataObjects.ProjectViewModel
 
-@{ 
+@{
     IEnumerable<int> tools = ViewBag.Tools;
 }
 <div>
@@ -34,7 +34,23 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.StartDate)
+            @Convert.ToString(string.Format("{0:dd/MM/yyyy}", Model.StartDate))
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @if (Model.EndDate != System.Data.SqlTypes.SqlDateTime.MinValue.Value)
+            {
+                @Convert.ToString(string.Format("{0:dd/MM/yyyy}", Model.EndDate))
+            }
+            else
+            {
+                @: Project In Progress.
+            }
+
         </dd>
 
         <dt>
@@ -58,27 +74,36 @@
         </dt>
 
         <dd>
-            @if(ViewBag.Tools == null)
+            @if (ViewBag.Tools == null)
             {
                 @Html.Display("N/A")
             }
             else
             {
-            <ul>
-                @foreach (var tool in ViewBag.Tools)
-                {
-                    <li>
-                        @tool @Html.ActionLink("Check In", "CheckIn", "Tools", new { tool, Model.ProjectID })
-                    </li>
-                }
-            </ul>
+                <ul>
+                    @foreach (var tool in ViewBag.Tools)
+                    {
+                        <li>
+                            @tool @Html.ActionLink("Check In", "CheckIn", "Tools", new { tool, Model.ProjectID })
+                        </li>
+                    }
+                </ul>
             }
-            
+
         </dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Check Out Tools", "Index", "Tools") |
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@if (Model.EndDate != System.Data.SqlTypes.SqlDateTime.MinValue.Value)
+{
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p> }
+else
+{
+    <p>
+
+        @Html.ActionLink("Check Out Tools", "Index", "Tools") |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+

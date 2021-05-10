@@ -272,18 +272,18 @@ GO
 Insert Into [dbo].[Project]
 		([WorkerID], [Paid], [TaskListFilename], [StartDate], [Deadline], [EndDate], [HoursWorked])
 	Values
-		(1000004, 1, Null, '2019-08-26 00:00:00', Null, '2020-01-15 00:00:00', 134),
-		(1000004, 1, Null, '2019-10-10 00:00:00', Null, '2020-02-01 11:59:59', 43),
-		(1000003, 0, Null, '2020-11-28 00:00:00', '2020-12-07 00:00:00', Null, Default),
-		(1000002, 1, Null, '2020-04-04 00:00:00', Null, Null, Default),
-		(1000009, 1, Null, '2020-05-01 00:00:00', Null, Null, Default),
-		(1000005, 0, Null, Default, DateAdd(day, 7, current_timestamp), Null, Default),
-		(1000006, 0, Null, Default, DateAdd(day, 7, current_timestamp), Null, Default),
-		(1000007, 0, Null, Default, DateAdd(day, 7, current_timestamp), Null, Default),
-		(1000008, 0, Null, Default, DateAdd(day, 7, current_timestamp), Null, Default),
-		(1000003, 0, Null, Default, DateAdd(day, 7, current_timestamp), Null, Default),
-		(1000009, 1, Null, Default, DateAdd(day, 15, current_timestamp), Null, Default),
-		(1000002, 1, Null, '2020-01-01 00:00:00', Null, Null, Default)
+		(1000004, 1, Null, '2019-08-26 00:00:00', '1/1/1753 12:00:00 AM', '2020-01-15 00:00:00', 134),
+		(1000004, 1, Null, '2019-10-10 00:00:00', '1/1/1753 12:00:00 AM', '2020-02-01 11:59:59', 43),
+		(1000003, 0, Null, '2020-11-28 00:00:00', '2020-12-07 00:00:00', '1/1/1753 12:00:00 AM', Default),
+		(1000002, 1, Null, '2020-04-04 00:00:00', '1/1/1753 12:00:00 AM', '1/1/1753 12:00:00 AM', Default),
+		(1000009, 1, Null, '2020-05-01 00:00:00', '1/1/1753 12:00:00 AM', '1/1/1753 12:00:00 AM', Default),
+		(1000005, 0, Null, Default, DateAdd(day, 7, current_timestamp), '1/1/1753 12:00:00 AM', Default),
+		(1000006, 0, Null, Default, DateAdd(day, 7, current_timestamp), '1/1/1753 12:00:00 AM', Default),
+		(1000007, 0, Null, Default, DateAdd(day, 7, current_timestamp), '1/1/1753 12:00:00 AM', Default),
+		(1000008, 0, Null, Default, DateAdd(day, 7, current_timestamp), '1/1/1753 12:00:00 AM', Default),
+		(1000003, 0, Null, Default, DateAdd(day, 7, current_timestamp), '1/1/1753 12:00:00 AM', Default),
+		(1000009, 1, Null, Default, DateAdd(day, 15, current_timestamp), '1/1/1753 12:00:00 AM', Default),
+		(1000002, 1, Null, '2020-01-01 00:00:00', '1/1/1753 12:00:00 AM', '1/1/1753 12:00:00 AM', Default)
 GO
 
 print '' print '*** creating ProjectName table ***'
@@ -888,7 +888,7 @@ AS
 			([ToolDescription])
 		Values
 			(@ToolDescription)
-		Return @@RowCount
+		Select Scope_Identity()
 	End
 GO
 
@@ -1037,7 +1037,11 @@ AS
 				Project.Paid,
 				Project.TaskListFilename,
 				Project.StartDate,
-				ProjectDescription.ProjectName
+				Project.Deadline,
+				Project.EndDate,
+				Project.HoursWorked,
+				ProjectDescription.ProjectName,
+				ProjectName.ProjectDescription
 		From 	Project Inner Join ProjectDescription
 				On Project.ProjectID = ProjectDescription.ProjectID
 				Inner Join ProjectName 
@@ -1063,7 +1067,8 @@ AS
 				Project.Deadline,
 				Project.EndDate,
 				Project.HoursWorked,
-				ProjectDescription.ProjectName
+				ProjectDescription.ProjectName,
+				ProjectName.ProjectDescription
 		From 	Project Inner Join ProjectDescription
 				On Project.ProjectID = ProjectDescription.ProjectID
 				Inner Join ProjectName 
@@ -1090,8 +1095,11 @@ AS
 				Project.EndDate,
 				Project.HoursWorked,
 				ProjectDescription.ProjectName
+				ProjectName.ProjectDescription
 		From 	Project Inner Join ProjectDescription
 				On Project.ProjectID = ProjectDescription.ProjectID
+				Inner Join ProjectName 
+				On ProjectName.ProjectName = ProjectDescription.ProjectName
 		Where 	Project.WorkerID = @WorkerID
 		Order By Project.ProjectID ASC
 	End

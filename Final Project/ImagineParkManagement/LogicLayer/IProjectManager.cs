@@ -14,9 +14,9 @@ namespace LogicLayer
         List<string> RetrieveAllProjectNames();
         ProjectViewModel RetrieveProjectByID(int? projectID);
         List<int> RetrieveToolsByProjectID(int? projectID);
-        bool EditProjectDetail(ProjectViewModel oldProject, ProjectViewModel newProject);
-        bool AddNewProject(ProjectViewModel project);
-        bool DeactivateProject(ProjectViewModel project);
+        bool EditProjectDetail(Project oldProject, Project newProject);
+        bool AddNewProject(Project project);
+        bool DeactivateProject(Project project);
         bool AddNewProjectName(string projectName, string projectDescription);
         
     }

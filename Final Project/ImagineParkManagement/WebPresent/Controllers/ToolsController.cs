@@ -25,7 +25,14 @@ namespace WebPresent.Controllers
         }
         public ActionResult Index()
         {
-            return View(_toolManager.RetrieveAllTools());
+            if (User.Identity.IsAuthenticated)
+            {
+                return View(_toolManager.RetrieveAllTools());
+            } else
+            {
+                return Redirect("~/");
+            }
+            
         }
 
         public ActionResult Details(int? id)

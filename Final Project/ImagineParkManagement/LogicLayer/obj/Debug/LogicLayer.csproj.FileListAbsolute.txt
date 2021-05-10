@@ -20,3 +20,14 @@ H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer
 H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
 H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.dll
 H:\dotNetTwo\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.pdb
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\LogicLayer.dll
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\LogicLayer.pdb
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\DataAccessLayer.dll
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\DataObjects.dll
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\DataAccessLayer.pdb
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\bin\Debug\DataObjects.pdb
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.dll
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\LogicLayer\obj\Debug\LogicLayer.pdb

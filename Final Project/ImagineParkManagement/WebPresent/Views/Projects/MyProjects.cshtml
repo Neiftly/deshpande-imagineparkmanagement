@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DataObjects.Project>
+﻿@model IEnumerable<DataObjects.ProjectViewModel>
 
 @{
     ViewBag.Title = "MyProjects";
@@ -25,6 +25,9 @@
             @Html.DisplayNameFor(model => model.StartDate)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ProjectName)
         </th>
         <th>
@@ -34,32 +37,53 @@
     </tr>
     @if (Model == null)
     {
-        @: You Don't Have any Assigned Projects.
+
     }
     else
     {
         foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Paid)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectDescription)
-                </td>
-                <td>
-                    @Html.ActionLink("Mark Complete", "FinishProject", new { ProjectID = item.ProjectID })
-                </td>
-            </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProjectID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Paid)
+    </td>
+    <td>
+        @{ var startDate = item.StartDate.ToShortDateString(); }
+        
+        @Html.DisplayFor(modelItem => startDate)
+    </td>
+    <td>
+        @{ var endDate = item.EndDate.ToShortDateString(); }
+        @if (item.EndDate == System.Data.SqlTypes.SqlDateTime.MinValue.Value)
+        {
+            @: Project in Progress.
+        }
+        else
+        {
+            @Html.DisplayFor(modelItem => endDate)
+        }
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProjectName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProjectDescription)
+    </td>
+    <td>
+        @if (item.EndDate != System.Data.SqlTypes.SqlDateTime.MinValue.Value)
+        {
+            @:Completed
+        }
+        else
+        {
+            @Html.ActionLink("Mark Complete", "FinishProject", new { ProjectID = item.ProjectID })
+        }
+
+    </td>
+</tr>
         }
     }
 

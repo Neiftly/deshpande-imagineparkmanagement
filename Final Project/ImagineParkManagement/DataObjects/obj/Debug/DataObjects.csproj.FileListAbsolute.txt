@@ -10,3 +10,9 @@ H:\dotNetTwo\Final Project\ImagineParkManagement\DataObjects\obj\Debug\DataObjec
 H:\dotNetTwo\Final Project\ImagineParkManagement\DataObjects\obj\Debug\DataObjects.csproj.CoreCompileInputs.cache
 H:\dotNetTwo\Final Project\ImagineParkManagement\DataObjects\obj\Debug\DataObjects.dll
 H:\dotNetTwo\Final Project\ImagineParkManagement\DataObjects\obj\Debug\DataObjects.pdb
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\DataObjects\bin\Debug\DataObjects.dll
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\DataObjects\bin\Debug\DataObjects.pdb
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\DataObjects\obj\Debug\DataObjects.csprojAssemblyReference.cache
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\DataObjects\obj\Debug\DataObjects.csproj.CoreCompileInputs.cache
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\DataObjects\obj\Debug\DataObjects.dll
+F:\dotNetThree\deshpande-imagineparkmanagement\Final Project\ImagineParkManagement\DataObjects\obj\Debug\DataObjects.pdb

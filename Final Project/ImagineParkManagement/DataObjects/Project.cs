@@ -14,14 +14,15 @@ namespace DataObjects
         // public string TaskListFilename { get; set; }
         public DateTime StartDate { get; set; }
         // public DateTime? Deadline { get; set; }
-        // public DateTime? EndDate { get; set; }
+        public DateTime EndDate { get; set; }
         // public int? HoursWorked { get; set; }
         public string ProjectName { get; set; }
-        public string ProjectDescription { get; set; }
+        
     }
 
     public class ProjectViewModel : Project
     {
+        public string ProjectDescription { get; set; }
         // public List<int> toolIDs { get; set; }
         // public List<string> toolNames { get; set; }
     }

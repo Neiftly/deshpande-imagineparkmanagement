@@ -36,13 +36,14 @@
             @Html.DisplayFor(modelItem => item.Paid)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
+            @{ var startDate = item.StartDate.ToShortDateString(); }
+
+            @Html.DisplayFor(modelItem => startDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProjectName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProjectID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ProjectID })
         </td>
     </tr>

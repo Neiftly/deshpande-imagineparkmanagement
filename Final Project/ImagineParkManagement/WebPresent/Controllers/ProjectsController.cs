@@ -20,7 +20,7 @@ namespace WebPresent.Controllers
         private IEnumerable<Tool> _tools;
         private IEnumerable<int> _workerIDs;
         private IEnumerable<string> _projectNames;
-        IEnumerable<Project> _projects;
+        IEnumerable<ProjectViewModel> _projects;
 
 
 
@@ -45,7 +45,7 @@ namespace WebPresent.Controllers
 
         // POST: Project/Create
         [HttpPost]
-        public ActionResult Create(ProjectViewModel project)
+        public ActionResult Create(Project project)
         {
             if (ModelState.IsValid)
             {
@@ -71,9 +71,16 @@ namespace WebPresent.Controllers
 
         public ActionResult Index()
         {
-                IEnumerable<Project> _projects = _projectManager.RetrieveAllProjects();
+            if (User.Identity.IsAuthenticated)
+            {
+                IEnumerable<ProjectViewModel> _projects = _projectManager.RetrieveAllProjects();
 
                 return View(_projects);
+            } else
+            {
+                return Redirect("~/");
+            }
+                
         }
 
         public ActionResult Details(int? id)
